@@ -1,0 +1,86 @@
+int e1=2, j=3,k=4, l=5, a=8, b=9, f=7,g=6, d=10, c=12, h=13;
+void setup()
+{
+  pinMode(e1,OUTPUT);
+  pinMode(a,OUTPUT);
+  pinMode(b,OUTPUT);
+  pinMode(c,OUTPUT);
+  pinMode(d,OUTPUT);
+  pinMode(f,OUTPUT);
+  pinMode(g,OUTPUT);
+  pinMode(j,INPUT);
+  pinMode(k,INPUT);
+  pinMode(l,INPUT);
+  pinMode(h,OUTPUT);
+  
+}
+
+void loop()
+{
+ if (digitalRead(k)== LOW || digitalRead(l)==LOW) 
+ {
+   
+   digitalWrite(h,HIGH);
+   
+ }else
+ {
+   digitalWrite (h, LOW);
+ }
+  if (digitalRead(j)== HIGH && digitalRead(k)==LOW || digitalRead(k)==HIGH && digitalRead(l)== LOW || digitalRead(k)== LOW && digitalRead(l)== HIGH) 
+  {
+    digitalWrite(e1,HIGH);
+  }else
+  {
+    digitalWrite (e1, LOW);
+  }
+  if (digitalRead (k) == LOW && digitalRead (l) == LOW || digitalRead (j) == HIGH && digitalRead (l) == LOW || digitalRead (j) == HIGH && digitalRead (k) == LOW)
+  {
+    digitalWrite (g, HIGH);
+    
+  }else
+  {
+    digitalWrite (g, LOW);
+  }
+  if (digitalRead (j) == HIGH && digitalRead (k) == LOW || digitalRead (k) == HIGH && digitalRead (l) == LOW)
+  {
+    digitalWrite (f, HIGH);
+  }else
+  {
+    digitalWrite (f, LOW);
+  }
+  if (digitalRead (j) == LOW && digitalRead (l) == LOW || digitalRead (j) == HIGH && digitalRead (k) == LOW)
+  {
+   
+    digitalWrite (a, HIGH);
+    
+  }else
+  {
+    digitalWrite (a, LOW);
+  }
+  if (digitalRead (j) == LOW && digitalRead (l) == LOW || digitalRead (j) == HIGH && digitalRead (k) == LOW && digitalRead (l) == HIGH)
+  {
+    digitalWrite (d, HIGH);
+    
+  }else
+  {
+    digitalWrite (d, LOW);
+  }
+  if (digitalRead (j) == LOW && digitalRead (k) == LOW && digitalRead (l) == HIGH || digitalRead (j) == HIGH && digitalRead (k) == HIGH && digitalRead (l) == LOW)
+  {
+    digitalWrite (c,HIGH);
+    
+  }else
+  {
+    digitalWrite (c, LOW);
+  }
+  if (digitalRead (j) == LOW && digitalRead (k) == LOW || digitalRead (j) == HIGH && digitalRead (k) == HIGH && digitalRead (l) == LOW)
+  {
+    digitalWrite (b, HIGH);
+    
+  }else
+  {
+    digitalWrite (b, LOW);
+  }
+    delay (100);
+}
+
